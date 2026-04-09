@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>AWS Cloud Engineering - Lernreise Praesentation</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; color: #c9d1d9; font-family: 'Segoe UI', sans-serif; }
+  .slide { min-height: 100vh; padding: 60px; display: flex; flex-direction: column; justify-content: center; border-bottom: 3px solid #21262d; }
+  .slide-1 { background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); text-align: center; }
+  .slide-1 h1 { font-size: 48px; color: #58a6ff; margin-bottom: 16px; }
+  .slide-1 h2 { font-size: 24px; color: #8b949e; margin-bottom: 32px; }
+  .slide-1 .student { background: #161b22; border: 1px solid #30363d; border-radius: 12px; display: inline-block; padding: 20px 40px; }
+  .slide-1 .student p { color: #c9d1d9; font-size: 18px; line-height: 2; }
+  .slide-2 { background: #0d1117; }
+  h2.section { color: #58a6ff; font-size: 32px; margin-bottom: 40px; padding-bottom: 12px; border-bottom: 2px solid #21262d; }
+  .week-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .week-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; }
+  .week-card .num { font-size: 12px; color: #58a6ff; font-weight: bold; margin-bottom: 8px; }
+  .week-card h3 { font-size: 16px; color: #c9d1d9; margin-bottom: 8px; }
+  .week-card p { font-size: 13px; color: #8b949e; line-height: 1.6; }
+  .week-card.done { border-left: 4px solid #238636; }
+  .week-card.current { border-left: 4px solid #58a6ff; }
+  .slide-3 { background: #0d1117; }
+  .arch-box { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 40px; text-align: center; }
+  .arch-row { display: flex; justify-content: center; align-items: center; gap: 16px; margin: 20px 0; flex-wrap: wrap; }
+  .service-box { background: #21262d; border: 1px solid #30363d; border-radius: 8px; padding: 16px 24px; text-align: center; min-width: 140px; }
+  .service-box .icon { font-size: 28px; margin-bottom: 8px; }
+  .service-box .name { color: #58a6ff; font-weight: bold; font-size: 14px; }
+  .service-box .desc { color: #8b949e; font-size: 12px; margin-top: 4px; }
+  .arrow { color: #58a6ff; font-size: 24px; }
+  .slide-4 { background: #0d1117; }
+  .cost-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .cost-table th { background: #161b22; color: #58a6ff; padding: 12px 16px; text-align: left; border: 1px solid #30363d; }
+  .cost-table td { padding: 12px 16px; border: 1px solid #21262d; font-size: 14px; }
+  .cost-table tr:nth-child(even) { background: #161b22; }
+  .green { color: #3fb950; font-weight: bold; }
+  .red { color: #f85149; font-weight: bold; }
+  .slide-5 { background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); text-align: center; }
+  .cert-box { background: #161b22; border: 2px solid #f0883e; border-radius: 12px; display: inline-block; padding: 40px 60px; margin-top: 30px; }
+  .cert-box h3 { color: #f0883e; font-size: 28px; margin-bottom: 16px; }
+  .cert-box p { color: #c9d1d9; font-size: 16px; line-height: 2; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Titel -->
+<div class="slide slide-1">
+  <h1>AWS Cloud Engineering</h1>
+  <h2>Meine Lernreise - Woche 1 bis 9</h2>
+  <div class="student">
+    <p>Student: <strong style="color:#58a6ff">Mohamed Karim Oudrhiri</strong></p>
+    <p>Kurs: <strong>Masterschool Cloud Engineering - Sept 25 DE</strong></p>
+    <p>Datum: <strong>April 2026</strong></p>
+    <p>AWS Account: <strong>313414756158</strong></p>
+  </div>
+</div>
+
+<!-- Slide 2: Wochenübersicht -->
+<div class="slide slide-2">
+  <h2 class="section">Wochenübersicht - Was ich gelernt habe</h2>
+  <div class="week-grid">
+    <div class="week-card done">
+      <div class="num">WOCHE 1</div>
+      <h3>Einführung</h3>
+      <p>App lokal gestartet, Linux-Grundlagen, Cloud Computing Konzepte</p>
+    </div>
+    <div class="week-card done">
+      <div class="num">WOCHE 2</div>
+      <h3>EC2 Compute</h3>
+      <p>EC2 Instanz gestartet, SSH, Security Groups, Hello World auf AWS</p>
+    </div>
+    <div class="week-card done">
+      <div class="num">WOCHE 3</div>
+      <h3>ALB + EC2</h3>
+      <p>Application Load Balancer, Target Groups, GroceryMate auf EC2 deployed</p>
+    </div>
+    <div class="week-card done">
+      <div class="num">WOCHE 4</div>
+      <h3>Docker</h3>
+      <p>Containerisierung mit Docker Compose, App lokal + EC2, PostgreSQL Container</p>
+    </div>
+    <div class="week-card done">
+      <div class="num">WOCHE 5</div>
+      <h3>AWS RDS</h3>
+      <p>Managed PostgreSQL, Migration von Docker DB zu RDS, DEPLOYMENT_ENV: aws_rds</p>
+    </div>
+    <div class="week-card done">
+      <div class="num">WOCHE 6</div>
+      <h3>IaC / Terraform</h3>
+      <p>Infrastruktur als Code, main.tf fuer EC2 + RDS + SG + S3</p>
+    </div>
+    <div class="week-card done">
+      <div class="num">WOCHE 7</div>
+      <h3>S3 Storage</h3>
+      <p>Blob Storage, App-Logs in S3, Versionierung, CLI Upload</p>
+    </div>
+    <div class="week-card current">
+      <div class="num">WOCHE 8</div>
+      <h3>Abschluss</h3>
+      <p>GitHub aufgeräumt, AWS-Präsentation, Rückblick auf Lernreise</p>
+    </div>
+    <div class="week-card">
+      <div class="num">WOCHE 9</div>
+      <h3>AWS Lambda</h3>
+      <p>Serverless, Health-Check Funktion, kostenlos bis 1M Requests/Monat</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 3: Architektur -->
+<div class="slide slide-3">
+  <h2 class="section">GroceryMate - AWS Architektur</h2>
+  <div class="arch-box">
+    <div class="arch-row">
+      <div class="service-box">
+        <div class="icon">🌐</div>
+        <div class="name">Browser</div>
+        <div class="desc">User Interface</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="service-box">
+        <div class="icon">🖥️</div>
+        <div class="name">EC2</div>
+        <div class="desc">t2.micro<br>Docker + Flask</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="service-box">
+        <div class="icon">🗄️</div>
+        <div class="name">RDS</div>
+        <div class="desc">PostgreSQL 15<br>db.t3.micro</div>
+      </div>
+    </div>
+    <div class="arch-row">
+      <div class="service-box">
+        <div class="icon">📦</div>
+        <div class="name">S3</div>
+        <div class="desc">App Logs<br>Blob Storage</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="service-box">
+        <div class="icon">⚡</div>
+        <div class="name">Lambda</div>
+        <div class="desc">Health Check<br>Serverless</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="service-box">
+        <div class="icon">🛡️</div>
+        <div class="name">Security Group</div>
+        <div class="desc">Port 22, 5000<br>5432 intern</div>
+      </div>
+    </div>
+    <p style="color:#8b949e; margin-top:20px; font-size:13px;">Region: eu-central-1 (Frankfurt) | VPC: vpc-034d74a15d5bb39e3</p>
+  </div>
+</div>
+
+<!-- Slide 4: Kostenübersicht -->
+<div class="slide slide-4">
+  <h2 class="section">Kostenmanagement - Strategie und Ergebnisse</h2>
+  <table class="cost-table">
+    <tr><th>Service</th><th>Wenn 24/7 aktiv</th><th>Mit Stop-Strategie</th><th>Free Tier</th></tr>
+    <tr><td>EC2 t2.micro</td><td class="red">~$8/Monat</td><td class="green">~$0</td><td>750h/Monat</td></tr>
+    <tr><td>RDS db.t3.micro</td><td class="red">~$18/Monat</td><td class="green">~$0</td><td>750h/Monat</td></tr>
+    <tr><td>S3 Storage</td><td class="green">~$0.02/Monat</td><td class="green">~$0.02/Monat</td><td>5GB gratis</td></tr>
+    <tr><td>Lambda</td><td class="green">$0</td><td class="green">$0</td><td>1M Req./Monat</td></tr>
+    <tr><td>ALB (vermieden!)</td><td class="red">~$9/Monat</td><td class="green">$0 (geloescht)</td><td>Kein Free Tier</td></tr>
+    <tr><td><strong>GESAMT</strong></td><td class="red"><strong>~$35/Monat</strong></td><td class="green"><strong>~$1-3/Monat</strong></td><td></td></tr>
+  </table>
+  <div style="background:#161b22; border-left:4px solid #3fb950; padding:16px 20px; margin-top:20px; border-radius:6px;">
+    <p style="color:#3fb950; font-weight:bold;">Strategie: Ressourcen stoppen nach jeder Woche = 90% Kostenersparnis</p>
+    <p style="color:#8b949e; font-size:13px; margin-top:8px;">make_screenshots.ps1 fuehrt AUTO-STOP nach jedem Screenshot automatisch durch</p>
+  </div>
+</div>
+
+<!-- Slide 5: Zertifizierung -->
+<div class="slide slide-5">
+  <h2 style="color:#58a6ff; font-size:32px; margin-bottom:20px;">Naechster Schritt</h2>
+  <div class="cert-box">
+    <h3>AWS Certified Cloud Practitioner</h3>
+    <p>Exam: <strong>CLF-C02</strong></p>
+    <p>Vorbereitung: <strong>Woche 10 + 11</strong></p>
+    <p>6 Udemy Praxisprüfungen absolvieren</p>
+    <p>Ziel: Zertifizierung bestehen!</p>
+  </div>
+</div>
+
+</body>
+</html>
